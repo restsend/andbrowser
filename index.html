@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/src/assets/favicon-32x32.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Android in browser| Phone on web | Browserlify.com</title>
+  <meta name="description"
+    content="Android in browser, Phone on web, Control android with browser without root, not need software download">
+  <meta name="keywords" content="Android in browser, Phone on Web, Control android with browser, Browser automation">
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/site.js"></script>
+</body>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-215803763-3"></script>
+<script>
+  if (window.location.origin.indexOf('browserlify.com') !== -1) {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-215803763-3');
+  }
+</script>
+
+</html>

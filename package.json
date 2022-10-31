@@ -1,0 +1,37 @@
+{
+  "name": "andbrowser",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "VITE_STORE=dev vite",
+    "build": "VITE_STORE=www vite build",
+    "preview": "vite preview",
+    "ext": "vite --config vite.extension.config.js",
+    "edge": "VITE_STORE=edge vite build --config vite.extension.config.js && sh ./build_dist.sh edge",
+    "chrome": "VITE_STORE=chrome vite build --config vite.extension.config.js && sh ./build_dist.sh chrome"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^2.0.12",
+    "@yume-chan/adb": "^0.0.16",
+    "@yume-chan/adb-backend-webusb": "^0.0.16",
+    "@yume-chan/adb-credential-web": "^0.0.16",
+    "@yume-chan/event": "^0.0.16",
+    "@yume-chan/scrcpy": "^0.0.16",
+    "@yume-chan/struct": "^0.0.16",
+    "tinyh264": "^0.0.7",
+    "vue": "^3.2.41",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "autoprefixer": "^10.4.12",
+    "markdown-it": "^13.0.1",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.2.1",
+    "vite": "^3.2.0",
+    "vite-plugin-markdown": "^2.1.0",
+    "vite-plugin-static-copy": "^0.11.1"
+  }
+}
