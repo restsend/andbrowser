@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import './style.css'
 import './assets/fonts/font.css'
-import Extension from './Extension.vue'
+import Phone from './components/Phone.vue'
 
-createApp(Extension).mount('#app')
+createApp(Phone).mount('#app')

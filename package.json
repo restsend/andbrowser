@@ -4,10 +4,9 @@
   "version": "1.1.0",
   "type": "module",
   "scripts": {
-    "dev": "VITE_STORE=dev vite",
-    "build": "VITE_STORE=www vite build",
+    "www": "VITE_STORE=www vite build",
     "preview": "vite preview",
-    "ext": "vite --config vite.extension.config.js",
+    "dev": "VITE_STORE=dev vite --config vite.extension.config.js",
     "edge": "VITE_STORE=edge vite build --config vite.extension.config.js && sh ./build_dist.sh edge",
     "chrome": "VITE_STORE=chrome vite build --config vite.extension.config.js && sh ./build_dist.sh chrome"
   },
@@ -20,11 +19,11 @@
     "@yume-chan/scrcpy": "^0.0.16",
     "@yume-chan/struct": "^0.0.16",
     "tinyh264": "^0.0.7",
-    "vue": "^3.2.41",
-    "vue-router": "^4.1.6"
+    "vue": "^3.2.41"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.0.1",
+    "@vitejs/plugin-legacy": "^2.3.0",
     "@vitejs/plugin-vue": "^3.2.0",
     "autoprefixer": "^10.4.12",
     "markdown-it": "^13.0.1",
