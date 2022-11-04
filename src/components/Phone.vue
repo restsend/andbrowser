@@ -25,9 +25,15 @@ const fileManagerView = ref(null)
 const showResize = ref(false)
 const showFileManager = ref(false)
 
-function report(name, value = 1) {
-    if (typeof gtag == 'undefined') { return }
-    gtag('event', name, { event_category:import.meta.env.VITE_STORE, value });
+function report(name, did = undefined) {
+    if (typeof gtag == 'undefined') {
+        const params = did ? `?did=${did}` : ''
+        try {
+            fetch(`https://browserlify.com/stats/${import.meta.env.VITE_STORE}/${name}${params}`, { mode: 'no-cors' }).then(() => { })
+        } catch (e) { }
+        return
+    }
+    gtag('event', name, { event_category: import.meta.env.VITE_STORE, value: 1, did });
 }
 
 async function onDisconnect(action) {
@@ -81,7 +87,7 @@ async function onToggleFileManager(action) {
     }
 }
 
-function onStatus(state) {
+function onStatus(state, did) {
     if (state == 'connected' || state == 'connecting') {
         connected.value = true
         showResize.value = true
@@ -99,7 +105,7 @@ function onStatus(state) {
     }
 
     if (state != 'disconnected') {
-        report(state)
+        report(state, did)
     }
 }
 
@@ -258,7 +264,7 @@ const actions = [
                 <div class=" h-8 w-1.5 rounded-full cursor-ew-resize bg-slate-400" @pointerdown="onResizeDown"></div>
             </div>
         </div>
-        <Howto v-if="!connected" class="px-4"/>
+        <Howto v-if="!connected" class="px-4" />
         <div v-show="showFileManager" class="px-4 mt-2 lg:px-8 rounded border py-2 shadow" ref="fileManagerView">
             <FileManager ref="fileManagerRef" />
         </div>

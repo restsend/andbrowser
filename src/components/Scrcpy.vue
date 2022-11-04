@@ -38,27 +38,27 @@ async function startConnect() {
     try {
         let dev = await client.connectDevice(meta);
         if (!dev) {
-            emits('change', 'connectfail')
+            emits('change', 'connectfail', meta.serial)
             client.addlog(`[client] connect device fail`);
             status.value = 'disconnected'
-            emits('change', status.value)
+            emits('change', status.value, meta.serial)
             return;
         }
     } catch (e) {
         //"Device Busy, Reconnect the USB cable."
         //TODO::
-        emits('change', 'devicebusy')
+        emits('change', 'devicebusy', meta.serial)
 
         client.addlog(`[client] connect device fail ${e.toString()}`);
         status.value = 'disconnected'
-        emits('change', status.value)
+        emits('change', status.value, meta.serial)
         return;
     }
 
     await client.connectScrcpy(screen.value);
 
     status.value = 'connected'
-    emits('change', status.value)
+    emits('change', status.value, meta.serial)
 }
 
 async function disconnect() {

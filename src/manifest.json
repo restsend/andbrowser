@@ -1,6 +1,6 @@
 {
   "name": "Phone On Web | Android in browser",
-  "description": "Using android phone in browser without root, not need software download.",
+  "description": "Using android phone in web browser without root, not need software download.",
   "homepage_url": "http://browserlify.com/?from=webstore_",
   "version": "-",
   "manifest_version": 3,
@@ -21,7 +21,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "background.js",
+        "icons/*",
         "assets/*"
       ],
       "matches": [

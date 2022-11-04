@@ -10,7 +10,6 @@ export default defineConfig({
     'process.env': process.env
   },
   build: {
-    //target: 'es2019',
     lib: {
       entry: resolve(__dirname, 'src/main.js'),
       name: 'andbrowser',

@@ -1,10 +1,10 @@
 {
   "name": "andbrowser",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "scripts": {
-    "www": "VITE_STORE=www vite build",
+    "build": "VITE_STORE=www vite build",
     "preview": "vite preview",
     "dev": "VITE_STORE=dev vite --config vite.extension.config.js",
     "edge": "VITE_STORE=edge vite build --config vite.extension.config.js && sh ./build_dist.sh edge",
@@ -30,7 +30,6 @@
     "postcss": "^8.4.18",
     "tailwindcss": "^3.2.1",
     "vite": "^3.2.0",
-    "vite-plugin-markdown": "^2.1.0",
     "vite-plugin-static-copy": "^0.11.1"
   }
 }
